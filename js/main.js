@@ -57,3 +57,77 @@ function funciones() {
 }
 
 // funciones();
+
+// LET vs VAR
+
+/* var iConVar = 0;
+function ejemploVar() {
+  for (; iConVar < 5; iConVar++) {
+    console.log('Dentro del for', iConVar);
+  }
+  console.log('Dentro de la función', iConVar);
+} 
+ejemploVar();
+console.log('fuera de la función', iConVar); */
+/*
+//! Agreguen un comentario arriba
+function ejemploLet() {
+  let iConLet = 100; //camelCase
+  for (let iConLet = 0; iConLet < 5; iConLet++) {
+    console.log("Dentro del for", iConLet);
+  }
+  console.log("Dentro de la función", iConLet);
+}
+ejemploLet();
+//console.log('fuera de la función', iConLet);
+
+//String Template
+let edad = 10;
+let nombre = "Mario";
+let apellido = "Sáchez";
+
+console.log(
+  "Te llamas " + nombre + " tu apellido es " + apellido + " tu edad es " + edad
+);
+
+//! Backtick  `
+console.log("Hola");
+console.log("Hola");
+console.log(`Te llamas: ${nombre} 
+Tu apellido es: ${apellido}
+Tu edad es: ${edad}`);
+
+// */
+
+//! Objetos
+
+let lista = [1, 2, 3, 4, 5, 6];
+let objeto = {
+  nombre: "Mauricio",
+  "apellido materno": "Sánchez",
+  "apellido paterno": "Pérez",
+  indice: "Valor",
+  cero: {
+    indiceArreglo: [
+      1,
+      2,
+      3,
+      4,
+      {
+        otroIndice: ["hola"],
+      },
+    ],
+  },
+};
+
+let indice = "apellido paterno";
+console.log(lista[2]);
+console.log(objeto.nombre);
+console.log(objeto[indice]);
+console.log(objeto["apellido materno"]);
+console.log(objeto);
+
+objeto.cero = []; //! Reemplazamos valores, haciendo referencia a un indice
+delete objeto.nombre; //! borramos un indice
+objeto.nuevaKey = "Nuevo Valor"; //! Si no existe el indice, lo agrega. Si ya existe, lo reemplaza
+console.log(objeto);
