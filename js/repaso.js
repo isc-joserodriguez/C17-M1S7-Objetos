@@ -43,11 +43,11 @@ function funciones() {
   listaPrecios.splice(1, 2); //! Elimina a partir de un indice, un número de elementos
   console.log(listaPrecios);
 
-  listaPrecios.forEach((precio) => {
+  listaPrecios.forEach(function (precio) {
     console.log(precio);
   }); //! Itera un arreglo.
 
-  const listaPreciosModificada = listaPrecios.map((precio) => {
+  const listaPreciosModificada = listaPrecios.map(function (precio) {
     return precio + 10;
   }); //! Modifica cada elemento del arreglo con el nuevo return.
   console.log(listaPreciosModificada);
@@ -98,36 +98,3 @@ Tu apellido es: ${apellido}
 Tu edad es: ${edad}`);
 
 // */
-
-//! Objetos
-
-let lista = [1, 2, 3, 4, 5, 6];
-let objeto = {
-  nombre: "Mauricio",
-  "apellido materno": "Sánchez",
-  "apellido paterno": "Pérez",
-  indice: "Valor",
-  cero: {
-    indiceArreglo: [
-      1,
-      2,
-      3,
-      4,
-      {
-        otroIndice: ["hola"],
-      },
-    ],
-  },
-};
-
-let indice = "apellido paterno";
-console.log(lista[2]);
-console.log(objeto.nombre);
-console.log(objeto[indice]);
-console.log(objeto["apellido materno"]);
-console.log(objeto);
-
-objeto.cero = []; //! Reemplazamos valores, haciendo referencia a un indice
-delete objeto.nombre; //! borramos un indice
-objeto.nuevaKey = "Nuevo Valor"; //! Si no existe el indice, lo agrega. Si ya existe, lo reemplaza
-console.log(objeto);
