@@ -95,3 +95,15 @@ function editarContacto(id, nuevosValores) {
     ...nuevosValores,
   };
 }
+
+function obtenerContactoPorID(id) {
+  //Buscando el índice del usuario que queremos modificar
+  const indiceArrayUsuarioBuscado = agenda.findIndex(function (contacto) {
+    return contacto.id === id;
+  });
+  console.log(agenda[indiceArrayUsuarioBuscado]);
+}
+
+function obtenerTodosLosContactos() {
+  console.log(agenda);
+}
