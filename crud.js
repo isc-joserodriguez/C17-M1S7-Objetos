@@ -88,9 +88,6 @@ function editarContacto(id, nuevosValores) {
   const indiceArrayUsuarioBuscado = agenda.findIndex(function (contacto) {
     return contacto.id === id;
   });
-  // Utilizando el indice, obtenemos el elemento de la agenda que vamos a modificar
-  // agenda[indice] => Nos devuelve un elemento en un índice específico.
-  // agenda[indice][subindice] => Nos devuelve una propiedad (valor) del elemnto en un índice específico.
   agenda[indiceArrayUsuarioBuscado] = {
     //SPREAD: Se crea un nuevo objeto tomando de base (agenda[indiceArrayUsuarioBuscado])
     // y posteriormente, se le concatena nuevosValores
