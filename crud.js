@@ -1,8 +1,38 @@
-/* Create
+/*
+Create
+Delete 
 Read
 Update
-Delete */
-let agenda = [];
+*/
+let agenda = [
+  {
+    id: 2,
+    nombre: "MAria",
+    apellido: "Pérez",
+    dob: "10/10/2020",
+    numeroTel: "131231312312",
+    email: "hola@hola.com",
+    numeroDoc: "doc",
+  },
+  {
+    id: 1,
+    nombre: "Pedro",
+    apellido: "Pérez",
+    dob: "10/10/2020",
+    numeroTel: "131231312312",
+    email: "hola@hola.com",
+    numeroDoc: "doc",
+  },
+  {
+    id: 3,
+    nombre: "Juan",
+    apellido: "Pérez",
+    dob: "10/10/2020",
+    numeroTel: "131231312312",
+    email: "hola@hola.com",
+    numeroDoc: "doc",
+  },
+];
 
 function agregarContacto(
   id,
@@ -14,7 +44,10 @@ function agregarContacto(
   numeroDoc
 ) {
   // if (!numeroTel || !nombre) throw new Error("Hey, falta el teléfono");
-  let newNombre = nombre.toLocaleLowerCase().trim().split("");
+  let newNombre = nombre
+    .toLocaleLowerCase()
+    .trim() //te quita los espacios al inicio y al final
+    .split("");
   newNombre[0] = newNombre[0].toUpperCase();
   agenda.push({
     id, //La key lleva el mismo nombre que la variable que se le asigna, no es necesario poner ambos.
@@ -37,4 +70,15 @@ function eliminarContacto(id) {
   agenda = agenda.filter(function (contacto) {
     return contacto.id !== id;
   });
+}
+
+function editarContacto(id, indiceDelObjetoAEditar, nuevoValor) {
+  //Buscando el índice del usuario que queremos modificar
+  const indiceArrayUsuarioBuscado = agenda.findIndex(function (contacto) {
+    return contacto.id === id;
+  });
+  // Utilizando el indice, obtenemos el elemento de la agenda que vamos a modificar
+  // agenda[indice] => Nos devuelve un elemento en un índice específico.
+  // agenda[indice][subindice] => Nos devuelve una propiedad (valor) del elemnto en un índice específico.
+  agenda[indiceArrayUsuarioBuscado][indiceDelObjetoAEditar] = nuevoValor;
 }
