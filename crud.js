@@ -72,7 +72,7 @@ function eliminarContacto(id) {
   });
 }
 
-function editarContacto(id, indiceDelObjetoAEditar, nuevoValor) {
+function editarPropiedadContacto(id, indiceDelObjetoAEditar, nuevoValor) {
   //Buscando el índice del usuario que queremos modificar
   const indiceArrayUsuarioBuscado = agenda.findIndex(function (contacto) {
     return contacto.id === id;
@@ -81,4 +81,19 @@ function editarContacto(id, indiceDelObjetoAEditar, nuevoValor) {
   // agenda[indice] => Nos devuelve un elemento en un índice específico.
   // agenda[indice][subindice] => Nos devuelve una propiedad (valor) del elemnto en un índice específico.
   agenda[indiceArrayUsuarioBuscado][indiceDelObjetoAEditar] = nuevoValor;
+}
+
+function editarContacto(id, nuevosValores) {
+  //Buscando el índice del usuario que queremos modificar
+  const indiceArrayUsuarioBuscado = agenda.findIndex(function (contacto) {
+    return contacto.id === id;
+  });
+  // Utilizando el indice, obtenemos el elemento de la agenda que vamos a modificar
+  // agenda[indice] => Nos devuelve un elemento en un índice específico.
+  // agenda[indice][subindice] => Nos devuelve una propiedad (valor) del elemnto en un índice específico.
+  agenda[indiceArrayUsuarioBuscado] = {
+    //SPREAD
+    ...agenda[indiceArrayUsuarioBuscado],
+    ...nuevosValores,
+  };
 }
