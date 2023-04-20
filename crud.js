@@ -92,7 +92,8 @@ function editarContacto(id, nuevosValores) {
   // agenda[indice] => Nos devuelve un elemento en un índice específico.
   // agenda[indice][subindice] => Nos devuelve una propiedad (valor) del elemnto en un índice específico.
   agenda[indiceArrayUsuarioBuscado] = {
-    //SPREAD
+    //SPREAD: Se crea un nuevo objeto tomando de base (agenda[indiceArrayUsuarioBuscado])
+    // y posteriormente, se le concatena nuevosValores
     ...agenda[indiceArrayUsuarioBuscado],
     ...nuevosValores,
   };
