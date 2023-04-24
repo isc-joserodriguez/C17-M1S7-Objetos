@@ -107,3 +107,24 @@ function obtenerContactoPorID(id) {
 function obtenerTodosLosContactos() {
   console.log(agenda);
 }
+
+class Rectangulo {
+  constructor(altura, base) {
+    this.altura = altura;
+    this.base = base;
+  }
+
+  get altura() {
+    return this.altura;
+  }
+
+  get area() {
+    return this.calcularArea();
+  }
+
+  calcularArea() {
+    return this.altura * this.base;
+  }
+}
+
+const rectangulo = new Rectangulo(15, 20);
